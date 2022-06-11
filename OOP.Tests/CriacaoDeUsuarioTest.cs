@@ -11,6 +11,7 @@ public class CriacaoDeUsuarioTest
     [DataRow("Eduardo", "Rodrigues")]
     [DataRow("Edut", "Rodr")]
     [DataRow("Edut", "Rodrdajsidjasid")]
+    [DataRow("aosijdasidjiasdjias", "joasdoajksd")]
     public void RetornoTrueQuandoNAMEEstiverCerto(string Nome, string Sobrenome)
     {
       Name nomeUsuario = new Name(Nome, Sobrenome);
