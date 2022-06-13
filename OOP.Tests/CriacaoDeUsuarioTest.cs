@@ -9,7 +9,6 @@ public class CriacaoDeUsuarioTest
 {
     [TestMethod]
     [DataRow("Eduardo", "Rodrigues")]
-    [DataRow("Edut", "Rodr")]
     [DataRow("Edut", "Rodrdajsidjasid")]
     [DataRow("aosijdasidjiasdjias", "joasdoajksd")]
     public void RetornoTrueQuandoNAMEEstiverCerto(string Nome, string Sobrenome)
@@ -23,11 +22,17 @@ public class CriacaoDeUsuarioTest
     [DataRow("", "Rodrigues")]
     [DataRow("Eduardo", "")]
     [DataRow("", "")]
+    [DataRow(null, null)]
+    [DataRow(null, "")]
+    [DataRow("", null)]
     public void RetornaFalseQuandoNAMEEstiverErrado(string Nome, string Sobrenome)
     {
       Name nomeUsuario = new Name(Nome, Sobrenome);
       Usuario usuario = new Usuario(nomeUsuario);
       Assert.AreEqual(false, usuario.IsValid);
     }
+
+
+
 
 }
